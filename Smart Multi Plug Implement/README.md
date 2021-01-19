@@ -16,10 +16,15 @@
 <br>
 <br>
 
+![설계도](./images/1.png)
+
+<br>
+<br>
+<br>
 
 ### 2) 멀티탭 하드웨어 설계도
 
 <br>
 <br>
 
-![설계도](./images/1.png)
+![설계도](./images/2.png)
