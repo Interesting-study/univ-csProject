@@ -1,4 +1,4 @@
-### 1. POS 프로그램 DB 요구조건
+### 1) POS 프로그램 DB 요구조건
 <br>
 <br>
 
@@ -51,3 +51,9 @@
 <br>
 <br>
 <br>
+
+
+
+### 2) ER-D 및 IE
+
+![ER-D](./images/ER-D.png)
