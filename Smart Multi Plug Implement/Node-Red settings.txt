@@ -1,0 +1,863 @@
+[
+    {
+        "id": "fa51cd89.9d758",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "275a4f1c.1cefe",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#003cce",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Smat Multi Plug",
+                "default": "#4B7930",
+                "baseColor": "#0080ff",
+                "baseFont": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#0080ff",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0080ff",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#4da6ff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0080ff",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Century Gothic,CenturyGothic,AppleGothic,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboardhttp://192.168.0.33:1880/#",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 47,
+                "sy": 47,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "91e6ba09.9764f8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Smart Multi Plug",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "477655f.15865ac",
+        "type": "ui_group",
+        "z": "",
+        "name": "현재상황 및 구별 제어",
+        "tab": "91e6ba09.9764f8",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": true
+    },
+    {
+        "id": "7cdc3d6.84f21c4",
+        "type": "ui_group",
+        "z": "",
+        "name": "실시간 온도 측정",
+        "tab": "91e6ba09.9764f8",
+        "order": 5,
+        "disp": true,
+        "width": "7",
+        "collapse": true
+    },
+    {
+        "id": "5eb3f9b0.10b718",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "a160ee1a.fec6",
+        "type": "ui_group",
+        "z": "",
+        "name": "예약전원제어",
+        "tab": "91e6ba09.9764f8",
+        "order": 3,
+        "disp": true,
+        "width": "7",
+        "collapse": true
+    },
+    {
+        "id": "f65e76c7.de4f78",
+        "type": "ui_group",
+        "z": "",
+        "name": "test",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9a1d5e25.31fd5",
+        "type": "cloudant",
+        "z": "",
+        "host": "8cb47767-dd94-48a4-872c-6d6f94d538cf-bluemix.cloudant.com",
+        "name": "esp8266_plug_reserv"
+    },
+    {
+        "id": "e920d909.b3f508",
+        "type": "ui_group",
+        "z": "",
+        "name": "전체 구 제어",
+        "tab": "91e6ba09.9764f8",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": true
+    },
+    {
+        "id": "6a44da99.042824",
+        "type": "ui_switch",
+        "z": "fa51cd89.9d758",
+        "name": "Plug01",
+        "label": "Plug01",
+        "group": "477655f.15865ac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp8266/plug01",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 186.77777099609375,
+        "y": 320.3333435058594,
+        "wires": [
+            [
+                "b81bbcdd.ad27f"
+            ]
+        ]
+    },
+    {
+        "id": "b81bbcdd.ad27f",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Plug01",
+        "topic": "esp8266/plug01",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 169.1111183166504,
+        "y": 431.3333320617676,
+        "wires": []
+    },
+    {
+        "id": "a941792f.7d5d48",
+        "type": "ui_chart",
+        "z": "fa51cd89.9d758",
+        "name": "Temperature",
+        "group": "7cdc3d6.84f21c4",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "온도",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "70",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 344,
+        "y": 29,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "35857e0a.290912",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Plug02",
+        "topic": "esp8266/plug02",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 695.8888702392578,
+        "y": 432.5555419921875,
+        "wires": []
+    },
+    {
+        "id": "39127f7b.844e3",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Plug03",
+        "topic": "esp8266/plug03",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 166.11112213134766,
+        "y": 638.0000114440918,
+        "wires": []
+    },
+    {
+        "id": "7ac5393d.58a898",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Plug04",
+        "topic": "esp8266/plug04",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 687.3333473205566,
+        "y": 658.6666584014893,
+        "wires": []
+    },
+    {
+        "id": "49f2495f.97ae88",
+        "type": "ui_switch",
+        "z": "fa51cd89.9d758",
+        "name": "Plug02",
+        "label": "Plug02",
+        "group": "477655f.15865ac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp8266/plug02",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 722.2221984863281,
+        "y": 294.00000953674316,
+        "wires": [
+            [
+                "35857e0a.290912"
+            ]
+        ]
+    },
+    {
+        "id": "f32c61fe.a57af",
+        "type": "ui_switch",
+        "z": "fa51cd89.9d758",
+        "name": "Plug03",
+        "label": "Plug03",
+        "group": "477655f.15865ac",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp8266/plug03",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 163.99998474121094,
+        "y": 526.7778091430664,
+        "wires": [
+            [
+                "39127f7b.844e3"
+            ]
+        ]
+    },
+    {
+        "id": "41a186ec.f890b8",
+        "type": "ui_switch",
+        "z": "fa51cd89.9d758",
+        "name": "Plug04",
+        "label": "Plug04",
+        "group": "477655f.15865ac",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp8266/plug04",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 678.555534362793,
+        "y": 522.333345413208,
+        "wires": [
+            [
+                "7ac5393d.58a898"
+            ]
+        ]
+    },
+    {
+        "id": "15f574dd.52c57b",
+        "type": "mqtt in",
+        "z": "fa51cd89.9d758",
+        "name": "Temperature",
+        "topic": "esp8266/temperature",
+        "qos": "2",
+        "broker": "5eb3f9b0.10b718",
+        "x": 147,
+        "y": 44,
+        "wires": [
+            [
+                "a941792f.7d5d48",
+                "8bba5c92.b7aaf"
+            ]
+        ]
+    },
+    {
+        "id": "5002351c.2633fc",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Entire Plug",
+        "topic": "esp8266/EntirePlug",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 716.1111373901367,
+        "y": 202.333327293396,
+        "wires": []
+    },
+    {
+        "id": "b5c3edc3.9636b",
+        "type": "ui_switch",
+        "z": "fa51cd89.9d758",
+        "name": "Entire Plug",
+        "label": "Entire Plug",
+        "group": "e920d909.b3f508",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp8266/EntirePlug",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 453.1111755371094,
+        "y": 165.8888397216797,
+        "wires": [
+            [
+                "5002351c.2633fc",
+                "6a44da99.042824",
+                "49f2495f.97ae88",
+                "f32c61fe.a57af",
+                "41a186ec.f890b8",
+                "ecd2c00a.9db93"
+            ]
+        ]
+    },
+    {
+        "id": "80a83973.a00058",
+        "type": "ui_form",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System 04",
+        "label": "예약전원제어[Plug04]",
+        "group": "a160ee1a.fec6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Status",
+                "value": "Status",
+                "type": "switch",
+                "required": true
+            },
+            {
+                "label": "Time(분 단위로)",
+                "value": "Time",
+                "type": "number",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "Status": false,
+            "Time": ""
+        },
+        "payload": "",
+        "submit": "예약",
+        "cancel": "취소",
+        "topic": "esp8266/reservPlug04",
+        "x": 925.1111450195312,
+        "y": 536.6667079925537,
+        "wires": [
+            [
+                "de18717c.dc193",
+                "7edb9320.437d8c"
+            ]
+        ]
+    },
+    {
+        "id": "cd18429b.78341",
+        "type": "ui_form",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System 02",
+        "label": "예약전원제어[Plug02]",
+        "group": "a160ee1a.fec6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Status",
+                "value": "Status",
+                "type": "switch",
+                "required": true
+            },
+            {
+                "label": "Time(분 단위로)",
+                "value": "Time",
+                "type": "number",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "Status": false,
+            "Time": ""
+        },
+        "payload": "",
+        "submit": "예약",
+        "cancel": "취소",
+        "topic": "esp8266/reservPlug02",
+        "x": 956.0000305175781,
+        "y": 299.5555610656738,
+        "wires": [
+            [
+                "3d272639.fda13a",
+                "968be47b.e593d8"
+            ]
+        ]
+    },
+    {
+        "id": "fc662100.4b879",
+        "type": "ui_form",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System 03",
+        "label": "예약전원제어[Plug03]",
+        "group": "a160ee1a.fec6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Status",
+                "value": "Status",
+                "type": "switch",
+                "required": true
+            },
+            {
+                "label": "Time(분 단위로)",
+                "value": "Time",
+                "type": "number",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "Status": false,
+            "Time": ""
+        },
+        "payload": "",
+        "submit": "예약",
+        "cancel": "취소",
+        "topic": "esp8266/reservPlug03",
+        "x": 412.99998474121094,
+        "y": 529.3333778381348,
+        "wires": [
+            [
+                "ea3509fa.d45c08",
+                "8095d7b4.c45b78"
+            ]
+        ]
+    },
+    {
+        "id": "8f701111.13924",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System 01",
+        "topic": "esp8266/reservPlug01",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 411.44444274902344,
+        "y": 450.66666412353516,
+        "wires": []
+    },
+    {
+        "id": "ea3509fa.d45c08",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System03",
+        "topic": "esp8266/reservPlug03",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 389.00000762939453,
+        "y": 641.1111278533936,
+        "wires": []
+    },
+    {
+        "id": "3d272639.fda13a",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System02",
+        "topic": "esp8266/reservPlug02",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 968.2221984863281,
+        "y": 446.2222270965576,
+        "wires": []
+    },
+    {
+        "id": "de18717c.dc193",
+        "type": "mqtt out",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System04",
+        "topic": "esp8266/reservPlug04",
+        "qos": "2",
+        "retain": "",
+        "broker": "5eb3f9b0.10b718",
+        "x": 953.1111145019531,
+        "y": 671.6666774749756,
+        "wires": []
+    },
+    {
+        "id": "66871969.878078",
+        "type": "ui_form",
+        "z": "fa51cd89.9d758",
+        "name": "Reservation System 01",
+        "label": "예약전원제어[Plug01]",
+        "group": "a160ee1a.fec6",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Status",
+                "value": "Status",
+                "type": "switch",
+                "required": true
+            },
+            {
+                "label": "Time(분 단위로)",
+                "value": "Time",
+                "type": "number",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "Status": false,
+            "Time": ""
+        },
+        "payload": "",
+        "submit": "예약",
+        "cancel": "취소",
+        "topic": "esp8266/reservPlug01",
+        "x": 404.77777099609375,
+        "y": 342.5555419921875,
+        "wires": [
+            [
+                "8f701111.13924",
+                "814e083f.29f178"
+            ]
+        ]
+    },
+    {
+        "id": "8bba5c92.b7aaf",
+        "type": "ui_gauge",
+        "z": "fa51cd89.9d758",
+        "name": "Temperature",
+        "group": "7cdc3d6.84f21c4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "*C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "36.5",
+        "seg2": "50",
+        "x": 352,
+        "y": 93,
+        "wires": []
+    },
+    {
+        "id": "968be47b.e593d8",
+        "type": "ui_toast",
+        "z": "fa51cd89.9d758",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "2번 플러그 예약되었습니다",
+        "name": "reserv message",
+        "x": 994.4445114135742,
+        "y": 405.5555114746094,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "814e083f.29f178",
+        "type": "ui_toast",
+        "z": "fa51cd89.9d758",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "1번 플러그 예약되었습니다",
+        "name": "reserv message",
+        "x": 406.6666564941406,
+        "y": 405.5555419921875,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8095d7b4.c45b78",
+        "type": "ui_toast",
+        "z": "fa51cd89.9d758",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "3번 플러그 예약되었습니다",
+        "name": "reserv message",
+        "x": 412.2221984863281,
+        "y": 604.4443969726562,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7edb9320.437d8c",
+        "type": "ui_toast",
+        "z": "fa51cd89.9d758",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "4번 플러그 예약되었습니다",
+        "name": "reserv message",
+        "x": 983.3333129882812,
+        "y": 625.5555419921875,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecd2c00a.9db93",
+        "type": "debug",
+        "z": "fa51cd89.9d758",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 730.888916015625,
+        "y": 64.66668701171875,
+        "wires": []
+    },
+    {
+        "id": "1c112011.267fd",
+        "type": "mqtt in",
+        "z": "fa51cd89.9d758",
+        "name": "Synchronize Switch 01",
+        "topic": "esp8266/completed_reserv_01",
+        "qos": "2",
+        "broker": "5eb3f9b0.10b718",
+        "x": 226,
+        "y": 246,
+        "wires": [
+            [
+                "6a44da99.042824"
+            ]
+        ]
+    },
+    {
+        "id": "9605054f.ed1678",
+        "type": "mqtt in",
+        "z": "fa51cd89.9d758",
+        "name": "Synchronize Switch 03",
+        "topic": "esp8266/completed_reserv_03",
+        "qos": "2",
+        "broker": "5eb3f9b0.10b718",
+        "x": 159,
+        "y": 705,
+        "wires": [
+            [
+                "f32c61fe.a57af"
+            ]
+        ]
+    },
+    {
+        "id": "3bb81666.57e80a",
+        "type": "mqtt in",
+        "z": "fa51cd89.9d758",
+        "name": "Synchronize Switch 04",
+        "topic": "esp8266/completed_reserv_04",
+        "qos": "2",
+        "broker": "5eb3f9b0.10b718",
+        "x": 665,
+        "y": 727,
+        "wires": [
+            [
+                "41a186ec.f890b8"
+            ]
+        ]
+    },
+    {
+        "id": "84ce186c.737278",
+        "type": "mqtt in",
+        "z": "fa51cd89.9d758",
+        "name": "Synchronize Switch 02",
+        "topic": "esp8266/completed_reserv_02",
+        "qos": "2",
+        "broker": "5eb3f9b0.10b718",
+        "x": 716,
+        "y": 386,
+        "wires": [
+            [
+                "49f2495f.97ae88"
+            ]
+        ]
+    }
+]
