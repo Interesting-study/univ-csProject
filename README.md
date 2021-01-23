@@ -1,4 +1,12 @@
- ### - DB + C POS PROGRAM IMPLEMENT
+## univ-csProject 에 대해여
+
+
+<br>
+<br>
+<br>
+
+
+### - DB + C POS PROGRAM IMPLEMENT
  
     - LINUX 환경으로 구현
     
